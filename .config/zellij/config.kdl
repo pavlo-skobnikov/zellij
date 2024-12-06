@@ -9,18 +9,26 @@ default_mode "locked"
 
 keybinds clear-defaults=true {
     locked {
-        bind "Ctrl g" { SwitchToMode "Normal"; }
+        // Being a tmux refugee is hard.
+        bind "Ctrl b" { SwitchToMode "Normal"; }
+        // Switch back-and-forth between the last and current tabs.
+        bind "Ctrl Tab" { ToggleTab; SwitchToMode "Locked"; }
     }
     normal {
         // Submodes access.
         bind "p" { SwitchToMode "Pane"; }
         bind "r" { SwitchToMode "Resize"; }
         bind "s" { SwitchToMode "Session"; }
-        // Mnemonic for "[F]ind".
-        bind "f" { SwitchToMode "Scroll"; }
+        // Mnemonic for "Scroll[b]ack".
+        bind "b" { SwitchToMode "Scroll"; }
         bind "t" { SwitchToMode "Tab"; }
         bind "m" { SwitchToMode "Move"; }
-        // Quicker tabs access.
+        // Pane and tab creation.
+        // "[C]reate tab".
+        bind "c" { NewTab; SwitchToMode "Locked"; }
+        // "[N]ew pane"
+        bind "n" { NewPane; SwitchToMode "Locked"; }
+        // Quick tabs access.
         bind "1" { GoToTab 1; SwitchToMode "Locked"; }
         bind "2" { GoToTab 2; SwitchToMode "Locked"; }
         bind "3" { GoToTab 3; SwitchToMode "Locked"; }
@@ -30,7 +38,6 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; SwitchToMode "Locked"; }
         bind "8" { GoToTab 8; SwitchToMode "Locked"; }
         bind "9" { GoToTab 9; SwitchToMode "Locked"; }
-        bind "Tab" { ToggleTab; SwitchToMode "Locked"; }
         // Quick pane switching.
         bind "h" { MoveFocus "Left"; SwitchToMode "Locked"; }
         bind "l" { MoveFocus "Right"; SwitchToMode "Locked"; }
@@ -79,7 +86,6 @@ keybinds clear-defaults=true {
         bind "l" { GoToNextTab; }
         bind "H" { MoveTab "Left"; }
         bind "L" { MoveTab "Right"; }
-        bind "n" { NewTab; SwitchToMode "Locked"; }
         bind "q" { CloseTab; SwitchToMode "Locked"; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "Locked"; }
         bind "b" { BreakPane; SwitchToMode "Locked"; }
