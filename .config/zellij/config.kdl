@@ -23,11 +23,15 @@ keybinds clear-defaults=true {
         bind "b" { SwitchToMode "Scroll"; }
         bind "t" { SwitchToMode "Tab"; }
         bind "m" { SwitchToMode "Move"; }
-        // Pane and tab creation.
+        // Pane and tab creation/closing.
         // "[C]reate tab".
         bind "c" { NewTab; SwitchToMode "Locked"; }
-        // "[N]ew pane"
-        bind "n" { NewPane; SwitchToMode "Locked"; }
+        // "[N]ew pane".
+        bind "n" { NewPane "Right"; SwitchToMode "Locked"; }
+        bind "N" { NewPane "Down"; SwitchToMode "Locked"; }
+        // "[Q]uit" pane/tab.
+        bind "q" { CloseFocus; SwitchToMode "Locked"; }
+        bind "Q" { CloseTab; SwitchToMode "Locked"; }
         // Quick tabs access.
         bind "1" { GoToTab 1; SwitchToMode "Locked"; }
         bind "2" { GoToTab 2; SwitchToMode "Locked"; }
@@ -61,11 +65,12 @@ keybinds clear-defaults=true {
         bind "L" { Resize "Decrease Right"; }
     }
     pane {
+        bind "h" { MoveFocus "Left"; }
+        bind "l" { MoveFocus "Right"; }
+        bind "j" { MoveFocus "Down"; }
+        bind "k" { MoveFocus "Up"; }
         bind "[" { PreviousSwapLayout; }
         bind "]" { NextSwapLayout; }
-        bind "s" { NewPane "Down"; SwitchToMode "Locked"; }
-        bind "v" { NewPane "Right"; SwitchToMode "Locked"; }
-        bind "q" { CloseFocus; SwitchToMode "Locked"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
         bind "z" { TogglePaneFrames; SwitchToMode "Locked"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "Locked"; }
@@ -86,7 +91,6 @@ keybinds clear-defaults=true {
         bind "l" { GoToNextTab; }
         bind "H" { MoveTab "Left"; }
         bind "L" { MoveTab "Right"; }
-        bind "q" { CloseTab; SwitchToMode "Locked"; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "Locked"; }
         bind "b" { BreakPane; SwitchToMode "Locked"; }
         bind "]" { BreakPaneRight; SwitchToMode "Locked"; }
