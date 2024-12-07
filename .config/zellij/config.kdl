@@ -6,6 +6,8 @@ theme "catppuccin-frappe"
 simplified_ui true
 // Let's reduce the number of key mapping collisions 😖
 default_mode "locked"
+// Helix is really the best 👏
+scrollback_editor "/opt/homebrew/bin/hx"
 
 keybinds clear-defaults=true {
     locked {
