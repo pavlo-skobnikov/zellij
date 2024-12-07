@@ -31,6 +31,8 @@ keybinds clear-defaults=true {
         // "[N]ew pane".
         bind "n" { NewPane "Right"; SwitchToMode "Locked"; }
         bind "N" { NewPane "Down"; SwitchToMode "Locked"; }
+        // "[F]loating pane"
+        bind "f" { ToggleFloatingPanes; SwitchToMode "Locked"; }
         // "[Q]uit" pane/tab.
         bind "q" { CloseFocus; SwitchToMode "Locked"; }
         bind "Q" { CloseTab; SwitchToMode "Locked"; }
@@ -76,7 +78,6 @@ keybinds clear-defaults=true {
         bind "q" { CloseFocus; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
         bind "z" { TogglePaneFrames; SwitchToMode "Locked"; }
-        bind "w" { ToggleFloatingPanes; SwitchToMode "Locked"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
         bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
