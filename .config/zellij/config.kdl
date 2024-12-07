@@ -73,6 +73,7 @@ keybinds clear-defaults=true {
         bind "k" { MoveFocus "Up"; }
         bind "[" { PreviousSwapLayout; }
         bind "]" { NextSwapLayout; }
+        bind "q" { CloseFocus; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "Locked"; }
         bind "z" { TogglePaneFrames; SwitchToMode "Locked"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "Locked"; }
@@ -93,6 +94,7 @@ keybinds clear-defaults=true {
         bind "l" { GoToNextTab; }
         bind "H" { MoveTab "Left"; }
         bind "L" { MoveTab "Right"; }
+        bind "q" { CloseTab; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "Locked"; }
         bind "b" { BreakPane; SwitchToMode "Locked"; }
         bind "]" { BreakPaneRight; SwitchToMode "Locked"; }
