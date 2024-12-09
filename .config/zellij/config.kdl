@@ -11,8 +11,7 @@ scrollback_editor "/opt/homebrew/bin/hx"
 
 keybinds clear-defaults=true {
     locked {
-        // Being a tmux refugee is hard.
-        bind "Ctrl b" { SwitchToMode "Normal"; }
+        bind "Ctrl g" { SwitchToMode "Normal"; }
         // Switch back-and-forth between the last and current tabs.
         bind "Ctrl Tab" { ToggleTab; SwitchToMode "Locked"; }
     }
